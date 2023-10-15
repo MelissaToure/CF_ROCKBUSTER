@@ -1,0 +1,41 @@
+Here are some SQL queries filtering data to answer buisness inquiries :  
+
+-- Lists of film titles which contains the word 'Uptown' in any position
+
+SELECT film_id,title,description
+FROM film
+WHERE title LIKE '%Uptown%'
+
+-- Lists of film length which is more than 120 minutes and rental rate which is more than 2.99
+
+SELECT film_id,title,description,length,rental_rate
+FROM film
+WHERE length >120 and rental_rate >2.99
+
+-- Rental duration is between 3 and 7 days (where 3 and 7 aren’t inclusive)
+
+SELECT film_id,title,description,rental_duration
+FROM film
+WHERE rental_duration BETWEEN 4 and 6
+
+-- Film replacement cost is less than 14.99
+
+SELECT film_id,title,description,replacement_cost
+FROM film
+WHERE replacement_cost <14.99
+
+-- Film rating is either PG or G
+
+SELECT film_id,title,description,rating
+FROM film
+WHERE rating = 'PG' OR rating = 'G'
+
+-- List of count of the movies, average rental rate, and maximum and minimum rental durations of either PG or G
+
+SELECT
+COUNT(film_id) AS count_of_movies,
+AVG(rental_rate) AS average_movie_rental_rate,
+MAX(rental_duration) AS maximum_rental_duration,
+MIN(rental_duration) AS minimum_rental_duration
+FROM film
+WHERE rating = 'PG' OR rating = 'G'
