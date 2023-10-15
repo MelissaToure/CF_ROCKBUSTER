@@ -30,7 +30,7 @@ SELECT film_id,title,description,rating
 FROM film
 WHERE rating = 'PG' OR rating = 'G'
 
--- List of count of the movies, average rental rate, and maximum and minimum rental durations of either PG or G
+-- List of count of the movies, average rental rate, and maximum and minimum rental durations of either PG or G group by rating
 
 SELECT
 COUNT(film_id) AS count_of_movies,
@@ -39,3 +39,4 @@ MAX(rental_duration) AS maximum_rental_duration,
 MIN(rental_duration) AS minimum_rental_duration
 FROM film
 WHERE rating = 'PG' OR rating = 'G'
+GROUP BY rating
