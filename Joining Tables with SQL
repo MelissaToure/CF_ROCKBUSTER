@@ -1,0 +1,67 @@
+Here are some queries I used to join tables regarding buisiness inquires : 
+
+-- Top 10 countries for Rockbuster in terms of customer numbers
+
+Select country, count(customer_id) as total_customer
+from customer A
+INNER JOIN address B on A.address_id = B.address_id
+INNER JOIN city C on B.city_id = C.city_id
+INNER JOIN country D on C.country_id = D.country_id
+GROUP BY country
+ORDER BY count(customer_id) desc
+LIMIT 10
+
+-- Top 10 cities that fall within any of the top 10 countries
+
+SELECT COUNT(A.customer_id) AS customer_count,
+C.city,
+D.country
+FROM customer A
+INNER JOIN address B ON A.address_id = B.address_id
+INNER JOIN city C ON B.city_id = C.city_id
+INNER JOIN country D ON C.country_id = D.country_ID
+GROUP BY country, city
+HAVING country IN ('India',
+'China',
+'United States',
+'Japan',
+'Mexico',
+'Brazil',
+'Russian Federation',
+'Philippines',
+'Turkey',
+'Indonesia')
+ORDER BY COUNT(customer_id) DESC
+LIMIT 10
+
+-- Top 5 customers in any of the top 10 cities who’ve paid the highest total amounts to Rockbuster
+
+SELECT SUM(A.amount) AS "total amount paid",
+A.customer_id,
+B.first_name,
+B.last_name,
+D.city,
+E.country
+FROM payment A
+INNER JOIN customer B ON A.customer_id = B.customer_id
+INNER JOIN address C ON B.address_id = C.address_id
+INNER JOIN city D ON C.city_id = D.city_id
+INNER JOIN country E ON D.country_id = E.country_ID
+GROUP BY A.customer_id,
+B.first_name,
+B.last_name,
+D.city,
+E.country
+HAVING city IN ('Aurora',
+'Acua',
+'Citrus Heights',
+'Iwaki',
+'Ambattur',
+'Shanwei',
+'So Leopoldo',
+'Teboksary',
+'Tianjin',
+'Cianjur')
+ORDER BY "total amount paid" DESC
+LIMIT 5
+
