@@ -15,4 +15,4 @@
 **Project Deliverables**
 
 + SQL codes
-+ Presentation with Tableau & Google slides
++ Presentation with Tableau & Google slides . Link : https://public.tableau.com/app/profile/m.lissa.tour./viz/RBsmovierentalanalysespresentation/Story1
