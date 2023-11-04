@@ -16,4 +16,4 @@
 
 + SQL codes
 + Data dictionnary [Here](https://docs.google.com/document/d/1hL0h9H9Q_H6vzlrrNJaa3uSSEotHXscWvuF1Gp19hBw/edit?usp=sharing)
-+ Presentation with Tableau & Google slides . Link [Here](https://public.tableau.com/app/profile/m.lissa.tour./viz/RBsmovierentalanalysespresentation/Story1). 
++ Presentation with Tableau [Here](https://public.tableau.com/app/profile/m.lissa.tour./viz/RBsmovierentalanalysespresentation/Story1) & Google slides [Here](https://docs.google.com/presentation/d/1hRFn4Ktb3aS_jn7iqNg9w5VZAil8rmUR6tWwUJ3gsFA/edit?usp=sharing)
